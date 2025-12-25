@@ -14,7 +14,7 @@
 // @namespace    trusted_security_researcher
 // @match        https://www.linkedin.com/games/zip/*
 // @grant        none
-// @version      1.0.3
+// @version      1.0.0
 // @author       WH1TUV_H4XOR
 // @description  Highlights correct path one by one with transparency trail - dynamic for any puzzle
 // ==/UserScript==
@@ -43,49 +43,56 @@
             }
         });
 
-        const keys = Object.keys(dotMap).map(Number);
-        if (keys.length === 0) return;
-        const maxNum = Math.max(...keys);
+        const maxNum = Math.max(...Object.keys(dotMap).map(Number));
+        if (Object.keys(dotMap).length < maxNum) return;
 
-        // Reset de Estilos para Limpeza de Ambiente
+        // Clear previous styles
         cells.forEach(cell => {
             cell.style.backgroundColor = '';
             cell.style.opacity = '';
             cell.style.transition = 'background-color 0.5s ease, opacity 0.5s ease';
         });
 
-        // Destaque de Células Vazias (Infraestrutura de Suporte)
+        // Highlight empty cells faintly
         cells.forEach(cell => {
             if (!cell.querySelector('div[data-cell-content="true"]')) {
-                cell.style.backgroundColor = 'rgba(173, 216, 230, 0.3)';
+                cell.style.backgroundColor = 'rgba(173, 216, 230, 0.3)'; // Light blue for empty
             }
         });
 
-        // Execução Sequencial com Efeito de Rastro (Trail)
+        // Sequential highlight with trail
         for (let i = 1; i <= maxNum; i++) {
             const cell = dotMap[i];
             if (!cell) continue;
 
-            // Alocação de Cores Táticas: Início (Verde), Fim (Vermelho), Meio (Laranja)
-            cell.style.backgroundColor = i === 1 ? '#00FF00' : (i === maxNum ? '#FF0000' : '#FFA500');
+            // Full opacity + bright color for current
+            cell.style.backgroundColor = i === 1 ? '#00FF00' : (i === maxNum ? '#FF0000' : '#FFA500'); // Green start, Red end, Orange middle
             cell.style.opacity = '1';
 
-            // Gerenciamento de Opacidade para Foco Visual
+            // Fade previous ones slightly
             for (let j = 1; j < i; j++) {
                 const prev = dotMap[j];
-                if (prev) prev.style.opacity = '0.6';
+                if (prev) {
+                    prev.style.opacity = '0.6';
+                }
             }
 
-            console.log(`[WH1TUV PATH STEP ${i}/${maxNum}] Alvo identificado: ${i}`);
-            await new Promise(r => setTimeout(r, 1500)); // Delay operacional de 1.5s
+            console.log(`[WH1TUV PATH STEP ${i}/${maxNum}] Seguindo para número ${i} - arraste aqui`);
+            await new Promise(r => setTimeout(r, 1500)); // 1.5s delay per step
         }
 
-        console.log('[WH1TUV GUIDE] Sequência completa: Verde → Laranja → Vermelho');
+        console.log('[WH1TUV GUIDE] Caminho completo destacado com rastro - siga sequência verde → laranja → vermelho');
+        console.log('[WH1TUV] Células azul-claro: ajuste manual com L-shapes se necessário para 100%.');
     }
 
-    window.addEventListener('load', () => setTimeout(highlightDynamicPath, 10000));
+    window.addEventListener('load', () => {
+        setTimeout(highlightDynamicPath, 10000);
+    });
 
-    const observer = new MutationObserver(() => setTimeout(highlightDynamicPath, 5000));
+    const observer = new MutationObserver(() => {
+        // Re-run on new puzzle
+        setTimeout(highlightDynamicPath, 5000);
+    });
     observer.observe(document.body, { childList: true, subtree: true });
 })();
 
