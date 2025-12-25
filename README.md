@@ -2,7 +2,7 @@ https://github.com/user-attachments/assets/9f1fdb09-baeb-4ea7-b811-caa67c2f5b1b
 
 ---
 
-# LinkedIn-Zip-Game-Sequential-Trail-Optimizer-v1.0.0
+# Zip Game Animated Orthogonal Trace (v1.0.0 - Safe Manhattan)
 Este script automatiza a identificação de caminhos dinâmicos no jogo LinkedIn Zip. Através de um rastro sequencial inteligente, o guia destaca o fluxo lógico do puzzle, eliminando erros de sequência e otimizando o tempo de conclusão para manutenção de ranking.
 
 **Version:** 1.0.0 (Sequential Trail)
