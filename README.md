@@ -1,4 +1,5 @@
-# Zip Game Dynamic Path Highlight Guide
+# LinkedIn-Zip-Game-Sequential-Trail-Optimizer-v1.0.0
+Este script automatiza a identificação de caminhos dinâmicos no jogo LinkedIn Zip. Através de um rastro sequencial inteligente, o guia destaca o fluxo lógico do puzzle, eliminando erros de sequência e otimizando o tempo de conclusão para manutenção de ranking.
 
 **Version:** 1.0.0 (Sequential Trail)
 **Author:** Kauã Silbershlach Parodes
@@ -10,7 +11,7 @@
 
 ```javascript
 // ==UserScript==
-// @name         Zip Game Dynamic Path Highlight Guide (v1.0.3 - Sequential Trail)
+// @name         Zip Game Dynamic Path Highlight Guide (v1.0.0 - Sequential Trail)
 // @namespace    trusted_security_researcher
 // @match        https://www.linkedin.com/games/zip/*
 // @grant        none
