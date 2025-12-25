@@ -3,10 +3,11 @@ https://github.com/user-attachments/assets/9f1fdb09-baeb-4ea7-b811-caa67c2f5b1b
 ---
 
 # Zip Game Animated Orthogonal Trace (v1.0.0 - Safe Manhattan)
-Este script automatiza a identificação de caminhos dinâmicos no jogo LinkedIn Zip. Através de um rastro sequencial inteligente, o guia destaca o fluxo lógico do puzzle, eliminando erros de sequência e otimizando o tempo de conclusão para manutenção de ranking.
+Este script automatiza a identificação e execução de caminhos válidos no jogo LinkedIn Zip, utilizando um traçado ortogonal sequencial baseado na lógica Manhattan (movimentos apenas horizontais e verticais).
 
-**Version:** 1.0.0 (Sequential Trail)
-**Author:** Kauã Silbershlach Parodes
+O algoritmo analisa dinamicamente o grid, conecta os pontos numerados em ordem correta e preenche todas as células intermediárias, garantindo um caminho contínuo sem cruzamentos, conforme as regras do puzzle.
+
+O rastro inteligente destaca visualmente o fluxo lógico da solução e pode executar o drag automático, eliminando erros de sequência, reduzindo tentativas manuais e otimizando o tempo de conclusão, o que contribui diretamente para a manutenção de ranking.
 
 ---
 
