@@ -7,11 +7,25 @@ Este script automatiza a identificação de caminhos dinâmicos no jogo LinkedIn
 
 **Version:** 1.0.0 (Sequential Trail)
 **Author:** Kauã Silbershlach Parodes
-**Objective:** Assistência visual dinâmica para otimização de performance no LinkedIn Zip.
 
 ---
 
 ### **Doutrina de Execução: O Script (Source Code)**
+
+1. **Instalação do Gerenciador:** Primeiro, instale a extensão [Violentmonkey](https://violentmonkey.github.io/get-it/) no seu navegador (Chrome, Firefox ou Edge).
+
+2. **Criação do Script:**
+* Clique no ícone do Violentmonkey e selecione o botão **"+" (Create new script)**.
+* Apague o código padrão e cole o código completo do **Zip Game Dynamic Path Highlight Guide (v1.0.0)** fornecido anteriormente.
+* Pressione `Ctrl+S` para salvar.
+
+3. **Execução:** Acesse [LinkedIn Games - Zip](https://www.linkedin.com/games/zip/). O script será injetado automaticamente pelo Violentmonkey e o guia sequencial iniciará após o carregamento da página.
+
+---
+
+### **Inserção no Código (Header de Metadados)**
+
+No início do código do script, você pode adicionar um link direto para facilitar para o usuário:
 
 ```javascript
 // ==UserScript==
